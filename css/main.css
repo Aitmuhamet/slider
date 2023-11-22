@@ -1,0 +1,118 @@
+/* @font-face {
+    font-family: 'icons';
+    src: url('../icons/fa-light-300.ttf');
+    font-weight: 300;
+} */
+
+@font-face {
+    font-family: 'icons';
+    src: url('../icons/fa-duotone-900.ttf');
+    font-weight: 900;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+*::before,
+*::after{
+    font-family: 'icons';
+    font-weight: 900;
+    /* font-size: 25px; */
+    position: absolute;
+}
+.prew::before{content: '\f0a8';}
+.prew::after{content: '\10f0a8'; color: rgba(35, 35, 35, 0.8);}
+.next::before{content: '\f0a9';}
+.next::after{content: '\10f0a9'; color: rgba(35, 35, 35, 0.8);}
+
+body {
+    background: #232323;
+}
+.slider{
+    max-width: 1320px;
+    width: 100%;
+    height: 500px;
+    background: grey;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.slider-list {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.slider-list__item {
+    width: 100%;
+    height: 100%;
+    background: saddlebrown;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+    color: #ffffff;
+    border: 1px solid yellow;
+}
+.slider-controls{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+.slider-controls__btn{
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    font-size: 40px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s, text-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slider-controls__btn:hover{
+    background: rgba(0, 0, 0, 0.7);
+    text-shadow: 0 0 10px #ffffff;
+}
+.prew{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+
+.slider-dots{
+    width: 100%;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+.slider-dots li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    transition: width 0.3s, height 0.3s;
+}
+.slider-dots li.active{
+    width: 25px;
+    height: 25px;
+    background: #232323;
+}
